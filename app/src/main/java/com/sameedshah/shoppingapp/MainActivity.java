@@ -1,5 +1,6 @@
 package com.sameedshah.shoppingapp;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(btnNext.getText().toString().equals("Finish")){
-                    Toast.makeText(MainActivity.this, "Thanks!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
                 }else {
                 viewPager.setCurrentItem(currentPage + 1);
             }}
