@@ -1,9 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".LoginActivity"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brand Logo"
+        android:textColor="#444"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:id="@+id/logo"
+        />
+    <TextView
+        android:textColor="#444"
+        android:id="@+id/signinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register account"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="40dp"
+        android:textSize="18sp"
+        android:layout_marginLeft="32dp"
+        />
+
+    <LinearLayout
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:id="@+id/mLayout1"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/signinText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        >
+
+        <EditText
+            android:id="@+id/edtFirstName"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/borders"
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:drawablePadding="12dp"
+            android:hint="First name"
+            android:padding="10dp" />
+        <EditText
+            android:background="@drawable/borders"
+            android:id="@+id/edtLastname"
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:drawablePadding="12dp"
+            android:padding="10dp"
+            android:hint="Last name"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+     <LinearLayout
+         android:id="@+id/mLayout2"
+         android:layout_below="@+id/mLayout1"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:layout_marginTop="10dp"
+         >
+         <com.hbb20.CountryCodePicker
+             android:background="@drawable/borders"
+             android:layout_width="wrap_content"
+             android:layout_height="40dp"
+             app:ccp_defaultNameCode="PK"
+             android:layout_marginLeft="32dp"
+
+             >
+         </com.hbb20.CountryCodePicker>
+
+         <EditText
+             android:padding="10dp"
+             android:inputType="number"
+             android:layout_width="match_parent"
+             android:layout_height="40dp"
+             android:layout_marginRight="32dp"
+             android:background="@drawable/borders"
+             android:drawableStart="@drawable/ic_local_phone_black_24dp"
+             android:drawablePadding="10dp"
+             android:hint="Phone number" />
+     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/mLayout2"
+        android:id="@+id/mLayout3"
+        android:weightSum="2"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        >
+
+        <EditText
+            android:background="@drawable/borders"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="Country"
+            android:padding="10dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_public_black_24dp"
+            />
+
+        <EditText
+            android:background="@drawable/borders"
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="State"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/ic_location_city_black_24dp"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/txtAddress"
+        android:layout_below="@+id/mLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Full address"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:drawableStart="@drawable/ic_add_location_black_24dp"
+        android:background="@drawable/borders"
+        />
+    <EditText
+        android:inputType="textPassword"
+        android:background="@drawable/borders"
+        android:id="@+id/txtPass"
+        android:layout_below="@+id/txtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Password"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:drawableStart="@drawable/ic_lock_black_24dp"
+        />
+    <EditText
+        android:inputType="textPassword"
+        android:background="@drawable/borders"
+        android:id="@+id/txtConfirmpass"
+        android:layout_below="@+id/txtPass"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Confirm password"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="10dp"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:drawableStart="@drawable/ic_lock_black_24dp"
+        />
+
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_below="@+id/txtConfirmpass"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="@drawable/gradient_background"
+        android:text="Register Account"
+        android:textAllCaps="false"
+        android:textColor="@color/white"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#444"
+        android:layout_below="@+id/btnRegister"
+        android:id="@+id/mView"/>
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/mView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="i already have account."
+            />
+        <TextView
+            android:textColor="@color/colorAccent"
+            android:id="@+id/txtLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
