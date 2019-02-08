@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     Fragment f;
-    HomeFragment h;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         drawerLayout =   findViewById(R.id.drawer_layout);
 
         configureNavigationDrawer();
-         h = new HomeFragment();
+
         setToolbar();
 
     }
@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-              //f  = new HomeFragment();
+              f  = null;
                 int itemId = menuItem.getItemId();
                 if (itemId == R.id.action_home) {
                     f = new HomeFragment();
