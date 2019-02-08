@@ -16,15 +16,17 @@ import android.view.MenuItem;
 public class HomeActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
-
-
+    Fragment f;
+    HomeFragment h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_with_drawer);
         drawerLayout =   findViewById(R.id.drawer_layout);
+
         configureNavigationDrawer();
+         h = new HomeFragment();
         setToolbar();
 
     }
@@ -38,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     private void setToolbar(){
         Toolbar tb = findViewById(R.id.toolbar);
         setSupportActionBar(tb);
+        tb.setTitle("Shopping app ");
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setHomeAsUpIndicator(R.drawable.ic_nav_black_24dp);
@@ -48,7 +51,8 @@ public class HomeActivity extends AppCompatActivity {
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                Fragment f = null;
+
+              //f  = new HomeFragment();
                 int itemId = menuItem.getItemId();
                 if (itemId == R.id.action_home) {
                     f = new HomeFragment();
