@@ -1,26 +1,38 @@
 package com.sameedshah.shoppingapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 
 import Adapters.LatestProductAdapter;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 @SuppressLint("ValidFragment")
 class HomeFragment extends Fragment {
     View v;
     RecyclerView mRecycler;
     LatestProductAdapter adapter;
+    CircleImageView mensIcon;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
          v = inflater.inflate(R.layout.home_fragment, container, false);
+         mensIcon = v.findViewById(R.id.mensIcon);
+         mensIcon.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 startActivity(new Intent(getActivity(),MenFashionActivity.class));
+             }
+         });
 
         int[] images = {R.drawable.shoes,R.drawable.jeans,R.drawable.laptop_one,R.drawable.laptop_two,
                 R.drawable.mobile_one,R.drawable.mobile_two};
@@ -34,4 +46,5 @@ class HomeFragment extends Fragment {
 
         return v;
     }
+
 }

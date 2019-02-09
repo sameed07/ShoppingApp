@@ -17,6 +17,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     Fragment f;
+    HomeFragment hm;
 
 
     @Override
@@ -24,7 +25,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_with_drawer);
         drawerLayout =   findViewById(R.id.drawer_layout);
-
+        hm  = new HomeFragment();
+        replaceFragment(hm);
         configureNavigationDrawer();
 
         setToolbar();
@@ -56,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
                 int itemId = menuItem.getItemId();
                 if (itemId == R.id.action_home) {
                     f = new HomeFragment();
-                } else if (itemId == R.id.action_cart) {
+                } else if (itemId == R.id.action_cat) {
                     f = new CategoryFragment();
                 }
                 if (f != null) {
@@ -82,4 +84,12 @@ public class HomeActivity extends AppCompatActivity {
         }
         return true;
     }
-}
+
+    //fragment transition
+
+    private void replaceFragment(Fragment fragment){
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame,fragment);
+        fragmentTransaction.commit();
+}}

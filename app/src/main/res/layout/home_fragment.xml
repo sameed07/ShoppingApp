@@ -44,6 +44,7 @@
               android:orientation="vertical">
 
               <de.hdodenhof.circleimageview.CircleImageView
+                  android:id="@+id/mensIcon"
                   android:layout_width="50dp"
                   android:layout_height="50dp"
                   android:src="@drawable/men_fashion"
