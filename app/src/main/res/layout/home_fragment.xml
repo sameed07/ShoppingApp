@@ -68,6 +68,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/womanIcon"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/womans_fashion"
@@ -91,6 +92,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/electIcon"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/electronics"
@@ -112,6 +114,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/kidIcon"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
                     android:layout_width="50dp"
@@ -135,6 +138,7 @@
                 android:orientation="vertical">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/moreIcon"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/much_more"

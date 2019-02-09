@@ -20,19 +20,18 @@ class HomeFragment extends Fragment {
     View v;
     RecyclerView mRecycler;
     LatestProductAdapter adapter;
-    CircleImageView mensIcon;
+    CircleImageView mensIcon,womanIcon,electronicsIcon,kidsIcon,moreIcon;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
          v = inflater.inflate(R.layout.home_fragment, container, false);
          mensIcon = v.findViewById(R.id.mensIcon);
-         mensIcon.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 startActivity(new Intent(getActivity(),MenFashionActivity.class));
-             }
-         });
+         womanIcon = v.findViewById(R.id.womanIcon);
+         electronicsIcon = v.findViewById(R.id.electIcon);
+         kidsIcon = v.findViewById(R.id.kidIcon);
+         moreIcon = v.findViewById(R.id.moreIcon);
+
 
         int[] images = {R.drawable.shoes,R.drawable.jeans,R.drawable.laptop_one,R.drawable.laptop_two,
                 R.drawable.mobile_one,R.drawable.mobile_two};
@@ -44,7 +43,30 @@ class HomeFragment extends Fragment {
         adapter = new LatestProductAdapter(getActivity(),images,title,price);
         mRecycler.setAdapter(adapter);
 
+        onClickFun();
         return v;
+    }
+
+    void onClickFun(){
+        mensIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),MenFashionActivity.class));
+            }
+        });
+        womanIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), WomansFashionActivity.class));
+            }
+        });
+
+        electronicsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),ElectronicsActivity.class));
+            }
+        });
     }
 
 }
