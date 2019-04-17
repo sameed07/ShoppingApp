@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <ImageView
+        android:id="@+id/image_of_category"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/men_fashion"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/linlayout_category"
+        android:layout_toRightOf="@id/image_of_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        >
+
+        <TextView
+            android:id="@+id/categoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello catogory"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/categoryItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello catogory"
+         />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/more_detail"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_navigate_next_black_24dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+       />
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+       android:layout_toRightOf="@id/image_of_category"
+        android:background="@color/searchBarClearIconTintColor"
+        android:layout_below="@id/linlayout_category"
+        android:layout_marginLeft="20dp"
+        />
+
+</RelativeLayout>

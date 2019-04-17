@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -67,6 +68,27 @@ class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(),ElectronicsActivity.class));
             }
         });
+        kidsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),KidsFashionActivity.class));
+            }
+        });
+
+        moreIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  startActivity(new Intent(getActivity(),CategoryFragment.class));
+                replaceFragment(new CategoryFragment());
+            }
+        });
+    }
+
+    private void replaceFragment(Fragment fragment) {
+
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame, fragment);
+        fragmentTransaction.commit();
     }
 
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenFashionActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolarbar"/>
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/topLayout"
+        >
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:layout_marginTop="20dp"
+            style="@style/MaterialSearchBarLight"
+            app:mt_searchIconDrawable="@drawable/ic_category_black_24dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            app:mt_speechMode="true"
+            android:background="@color/white"
+            app:mt_hint="Search by Product or Brand"
+            app:mt_maxSuggestionsCount="10"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/searchBar" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/kidsRecycler">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
